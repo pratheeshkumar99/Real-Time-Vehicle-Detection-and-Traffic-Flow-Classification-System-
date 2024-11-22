@@ -80,9 +80,58 @@ Here are some sample images from the dataset used for training:
 
 ---
 
+
 ### Training Loss
-The following plots show the training loss curves for the YOLOv8 model:
-![Training Loss](images/training_loss.png)
+The following plots show the training and validation loss curves for different components of the YOLOv8 model. These learning curves demonstrate the gradual reduction in loss over 20 epochs:
+
+#### 1. Box Loss Learning Curve
+![Box Loss Learning Curve](images/training_loss.png)
+
+This curve represents the error in predicted bounding boxes for detected objects. A steady decline in both training and validation loss indicates the model's ability to generalize effectively.
+
+---
+
+### Classification Loss Learning Curve
+![Classification Loss Learning Curve](images/classification.png)
+
+This plot illustrates the model's error in classifying detected objects correctly. The convergence of training and validation loss implies that the model is well-tuned and avoids overfitting.
+
+---
+
+### Distribution Focal Loss Learning Curve
+![Distribution Focal Loss Learning Curve](images/distribution.png)
+
+The focal loss is used to handle class imbalance during training. This curve shows consistent improvement in both training and validation, indicating effective handling of rare classes.
+
+---
+
+### Confusion Matrix
+![Confusion Matrix](images/confusion.png)
+
+The confusion matrix below shows the model's performance on the validation set, highlighting its ability to distinguish between vehicles and the background.
+
+- **True Positives (Vehicle Detected as Vehicle):** High accuracy (97%).
+- **False Negatives (Vehicle Detected as Background):** Low error (3%).
+
+---
+
+### Observations
+1. **Convergence of Loss Curves:** 
+   - The training and validation loss curves are close, suggesting the model is not overfitting and generalizes well to unseen data.
+   - The smooth decline in the loss values indicates effective learning.
+
+2. **Confusion Matrix Insights:** 
+   - High recall for vehicles demonstrates the model's ability to detect most vehicles in the dataset.
+   - The low false-positive rate indicates minimal misclassification of background regions as vehicles.
+
+3. **Classification and Focal Loss:** 
+   - The focal loss curve shows the model's capacity to handle imbalance in the dataset, improving performance for underrepresented classes.
+
+4. **Box Loss:** 
+   - Consistent reduction in box loss reflects the model's increasing accuracy in predicting bounding box coordinates.
+
+---
+
 
 ---
 
