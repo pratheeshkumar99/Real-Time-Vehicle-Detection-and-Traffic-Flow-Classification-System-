@@ -76,19 +76,19 @@ The output will be saved as an annotated video, e.g., `processed_sample_video.mp
 
 ### Sample Dataset
 Here are some sample images from the dataset used for training:
-![Sample Dataset](images/sample_dataset.jpg)
+![Sample Dataset](images/sample_dataset.png)
 
 ---
 
 ### Training Loss
 The following plots show the training loss curves for the YOLOv8 model:
-![Training Loss](images/training_loss.jpg)
+![Training Loss](images/training_loss.png)
 
 ---
 
 ### Validation Set Inferences
 Below are sample inferences from the validation set:
-![Validation Inferences](images/validation_inferences.jpg)
+![Validation Inferences](images/validation_inferences.png)
 
 ---
 
