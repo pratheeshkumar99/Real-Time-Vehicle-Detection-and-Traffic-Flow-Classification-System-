@@ -18,8 +18,9 @@
    - [Real-Time Video Detection](#real-time-video-detection)
    - [Real-Time Traffic Intensity](#real-time-traffic-intensity)
 7. [Performance Metrics](#performance-metrics)
-8. [Future Work](#future-work)
-9. [Credits](#credits)
+8. [ONNX Export and Usage](#YOLOv8-ONNX-Model-Deployment)
+9. [Future Work](#future-work)
+10. [Credits](#credits)
 
 ---
 
@@ -175,6 +176,57 @@ The model achieved the following performance metrics during validation:
 
 ---
 
+# YOLOv8 ONNX Model Deployment
+
+This section covers the export of the trained YOLOv8 model to the ONNX format, which facilitates deployment on various platforms such as mobile devices, edge devices, or custom frameworks.
+
+### Benefits of ONNX:
+- **Platform Independence**: Deploy the model across different computing frameworks and programming languages.
+- **Lightweight Deployment**: Optimal for real-time inference on low-resource devices.
+- **Framework Compatibility**: Compatible with major frameworks like PyTorch, TensorFlow, OpenCV, and others.
+
+### Exporting to ONNX
+The model is already exported and is available in the repository under `models/best.onnx`. To export the model yourself, you can follow the command below:
+```python
+from ultralytics import YOLO
+
+# Load the trained YOLOv8 model
+model = YOLO('models/best.pt')
+
+# Export to ONNX format with dynamic input size support
+model.export(format='onnx', dynamic=True)
+```
+
+### Running Inference with ONNX Runtime
+To run inference using the ONNX runtime, follow these steps:
+
+1. **Install ONNX Runtime**:
+   ```bash
+   pip install onnxruntime
+   ```
+
+2. **Load and Run Inference**:
+   ```python
+   import onnxruntime as ort
+   import numpy as np
+   import cv2
+
+   # Load ONNX model
+   session = ort.InferenceSession("models/best.onnx")
+
+   # Prepare input image
+   input_image = cv2.imread("path/to/image.jpg")
+   input_image = cv2.resize(input_image, (640, 640))  # Resize to model's input size
+   input_tensor = np.expand_dims(input_image.transpose(2, 0, 1), axis=0).astype(np.float32)
+
+   # Run inference
+   outputs = session.run(None, {"images": input_tensor})
+   print(outputs)
+   ```
+
+### Notes:
+- The `dynamic=True` flag in the export command ensures that the ONNX model can handle variable input sizes.
+- Ensure that the pre-processing steps (e.g., resizing, normalization) align with the training configuration.
 
 ## Future Work
 - Extend the model to classify different types of vehicles (e.g., cars, trucks, motorcycles).
