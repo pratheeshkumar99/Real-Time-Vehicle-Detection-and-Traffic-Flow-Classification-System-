@@ -7,7 +7,6 @@
 3. [File Structure](#file-structure)
 4. [Requirements](#requirements)
 5. [Usage](#usage)
-   - [Training](#training-the-model)
    - [Inference](#real-time-detection)
 6. [Results](#results)
    - [Sample Dataset](#sample-dataset)
@@ -63,15 +62,6 @@ pip install -r requirements.txt
 ---
 
 ## Usage
-
-### Training the Model
-Use the Jupyter notebook `Notebook.ipynb` to train the YOLOv8 model on your dataset:
-1. Update the `data.yaml` file with your dataset path and class names.
-2. Train the model:
-   ```bash
-   python train.py --data data.yaml --cfg models/yolov8.yaml --epochs 50
-   ```
-
 ### Real-Time Detection
 Run the provided Python script for detecting vehicles in a video file or live stream:
 ```bash
