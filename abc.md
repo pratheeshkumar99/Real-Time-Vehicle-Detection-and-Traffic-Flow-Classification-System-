@@ -84,7 +84,6 @@ Here are some sample images from the dataset used for training:
 
 ---
 
-
 ### Training Loss
 The following plots show the training and validation loss curves for different components of the YOLOv8 model. These learning curves demonstrate the gradual reduction in loss over 20 epochs:
 
@@ -136,7 +135,6 @@ The confusion matrix below shows the model's performance on the validation set, 
 
 ---
 
-
 ### Validation Set Inferences
 Below are sample inferences from the validation set:
 ![Validation Inferences](images/validation_inferences.png)
@@ -146,6 +144,8 @@ Below are sample inferences from the validation set:
 ### Real-Time Video Detection
 The model processes videos and identifies vehicles in real-time. Below is an example of annotated frames from a video:
 ![Real-Time Detection](images/output.gif)
+
+---
 
 ### Real-Time Traffic Intensity
 The traffic intensity is analyzed based on the number of vehicles detected in each lane:
@@ -172,4 +172,3 @@ The model achieved the following performance metrics during validation:
 This project builds on:
 - [YOLOv8 by Ultralytics](https://github.com/ultralytics/yolov8)
 - Datasets and initial project structure adapted from Kaggle contributions.
-
