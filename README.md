@@ -154,8 +154,6 @@ The traffic intensity is analyzed based on the number of vehicles detected in ea
 
 ---
 
----
-
 ## Performance Metrics
 
 The model achieved the following performance metrics during validation:
