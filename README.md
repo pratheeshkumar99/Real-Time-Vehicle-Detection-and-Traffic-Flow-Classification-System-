@@ -94,10 +94,11 @@ Below are sample inferences from the validation set:
 
 ### Real-Time Video Detection
 The model processes videos and identifies vehicles in real-time. Below is an example of annotated frames from a video:
-![Real-Time Detection](images/real_time_video.jpg)
+![Real-Time Detection](images/output.gif)
 
+### Real-Time Traffic Intensity
 The traffic intensity is analyzed based on the number of vehicles detected in each lane:
-![Traffic Analysis](images/traffic_analysis.jpg)
+![Traffic Analysis](images/traffic_density_analysis.gif)
 
 ---
 
