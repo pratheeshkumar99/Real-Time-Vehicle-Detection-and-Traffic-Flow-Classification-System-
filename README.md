@@ -153,11 +153,27 @@ The traffic intensity is analyzed based on the number of vehicles detected in ea
 
 ---
 
+---
+
 ## Performance Metrics
+
 The model achieved the following performance metrics during validation:
-- **mAP@0.5**: 0.92
-- **Precision**: 0.89
-- **Recall**: 0.91
+
+| **Metric**        | **Value** | **Description**                                                                                   |
+|--------------------|-----------|---------------------------------------------------------------------------------------------------|
+| **mAP@0.5**       | 0.975     | Mean Average Precision at IoU threshold of 0.5, measuring the precision-recall tradeoff for detections. |
+| **Precision**     | 0.916     | The fraction of correctly identified vehicles out of all predicted vehicles (low false positives). |
+| **Recall**        | 0.938     | The fraction of actual vehicles correctly identified by the model (low false negatives).          |
+| **True Positives**| 97%       | Percentage of vehicles correctly classified as vehicles.                                          |
+| **False Negatives**| 3%        | Percentage of vehicles mistakenly classified as background.                                       |
+
+### Observations:
+- The high mAP@0.5 demonstrates the robustness of the YOLOv8 model in accurately detecting vehicles within bounding boxes.
+- Precision indicates a low false-positive rate, showing the model’s reliability in avoiding incorrect predictions.
+- Recall suggests the model’s ability to detect the majority of vehicles in the validation dataset.
+- The confusion matrix corroborates the high performance, with minimal misclassifications.
+
+---
 
 ---
 
