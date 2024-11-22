@@ -175,7 +175,6 @@ The model achieved the following performance metrics during validation:
 
 ---
 
----
 
 ## Future Work
 - Extend the model to classify different types of vehicles (e.g., cars, trucks, motorcycles).
